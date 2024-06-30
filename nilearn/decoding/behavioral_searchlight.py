@@ -28,7 +28,7 @@ ESTIMATOR_CATALOG = dict(svc=svm.LinearSVC, svr=svm.SVR)
 
 
 @fill_doc
-def search_light(
+def behavioral_search_light(
     X,
     y,
     estimator,
@@ -359,7 +359,7 @@ class SearchLight(BaseEstimator):
         elif isinstance(estimator, str):
             estimator = ESTIMATOR_CATALOG[estimator]()
 
-        scores = search_light(
+        scores = behavioral_search_light(
             X,
             y,
             estimator,
